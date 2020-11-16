@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+<body>
+     
+     <script>
+     var myClass = (function () {
+
+          // Constants as private static attributes;
+
+          var constants = {
+               UPPER_BOUND: 100,
+               LOWER_BOUND: 100
+          }
+          
+          getConstant = function (name) {
+               return constants[name];
+          }    
+
+          
+
+          return function (constructorArgument) {
+               this.getConstant = getConstant
+          }
+
+     })();
+
+         var a = new myClass();
+         console.log(a.getConstant)
+     </script>
+</body>
+</html>
