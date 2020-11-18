@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+<body>
+
+     <div style="display: none;" id="root">I am a root</div>
+     <div style="display: none;" id="log">I am a boot</div>
+     
+
+     <script src="./chaining.js"></script>
+     <script>
+      var a =  $('root', 'log');
+
+      a.setStyle('display', 'block')
+       .addEvent('click', function (event) {
+          
+           $(this).setStyle('color', 'green')
+      })
+      console.log(a)
+     </script>
+
+     
+</body>
+</html>
